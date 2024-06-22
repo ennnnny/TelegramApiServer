@@ -445,4 +445,13 @@ class ApiExtensions
         ];
     }
 
+    public function getDownloadLinkInfo(array $info)
+    {
+        return $this->madelineProto->getDownloadLink($info, 'http://127.0.0.1:9503/api/bot/kuyetb/dl');
+    }
+
+    public function dl()
+    {
+        MadelineProto\API::downloadServer(ROOT_DIR.'/sessions/bot/kuyetb.madeline');
+    }
 }
