@@ -447,7 +447,11 @@ class ApiExtensions
 
     public function getDownloadLinkInfo(array $info)
     {
-        return $this->madelineProto->getDownloadLink($info, 'http://127.0.0.1:9504/dl.php');
+        $link = $this->madelineProto->getDownloadLink($info, 'http://127.0.0.1:9504/dl.php');
+
+        return [
+            'link' => $link,
+        ];
     }
 
     public function dl()
